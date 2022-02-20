@@ -23,14 +23,14 @@ import (
 	"os"
 	"path/filepath"
 
-	tf "github.com/hashicorp/terraform-provider-hashicups/hashicups"
+	tf "github.com/zahiar/terraform-provider-bitbucket/bitbucket"
 
 	"github.com/crossplane/terrajet/pkg/pipeline"
 	// Comment out the line below, if your Terraform provider uses an old
 	// version (<v2) of github.com/hashicorp/terraform-plugin-sdk.
 	// "github.com/crossplane/terrajet/pkg/types/conversion"
 
-	"github.com/crossplane-contrib/provider-jet-template/config"
+	"github.com/crossplane-contrib/provider-jet-bitbucket/config"
 )
 
 func main() {

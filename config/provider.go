@@ -19,11 +19,13 @@ package config
 import (
 	tjconfig "github.com/crossplane/terrajet/pkg/config"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
+
+	"github.com/ArunRamakani/hashicorp-provider/config/project"
 )
 
 const (
-	resourcePrefix = "template"
-	modulePath     = "github.com/crossplane-contrib/provider-jet-template"
+	resourcePrefix = "bitbucket"
+	modulePath     = "github.com/crossplane-contrib/provider-jet-bitbucket"
 )
 
 // GetProvider returns provider configuration
@@ -36,10 +38,15 @@ func GetProvider(resourceMap map[string]*schema.Resource) *tjconfig.Provider {
 	}
 
 	pc := tjconfig.NewProvider(resourceMap, resourcePrefix, modulePath,
-		tjconfig.WithDefaultResourceFn(defaultResourceFn))
+		tjconfig.WithDefaultResourceFn(defaultResourceFn), tjconfig.WithIncludeList([]string{
+			"bitbucket_project$",
+		}))
 
 	for _, configure := range []func(provider *tjconfig.Provider){
 		// add custom config functions
+		for _, configure := range []func(provider *tjconfig.Provider){
+			add custom config functions
+	+           project.Configure,
 	} {
 		configure(pc)
 	}
