@@ -10,6 +10,7 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/zahiar/terraform-provider-bitbucket v1.0.1
 	go.uber.org/multierr v1.7.0 // indirect
+	golang.org/x/tools v0.1.9 // indirect
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 	k8s.io/apimachinery v0.22.0
 	k8s.io/client-go v0.22.0
